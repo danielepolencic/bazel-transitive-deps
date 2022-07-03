@@ -19,7 +19,12 @@ ts_project(
         },
     },
     deps = [
+        "@npm//@rollup/plugin-commonjs",
+        "@npm//@rollup/plugin-json",
+        "@npm//@rollup/plugin-node-resolve",
         "@npm//@types/node",
         "@npm//rollup",
+        "@npm//rollup-plugin-node-polyfills",
+        "@npm//rollup-plugin-sourcemaps",
     ],
 )

@@ -1,11 +1,34 @@
 load("//packages/bundler:index.bzl", "single_file_bundler")
 load("@build_bazel_rules_nodejs//:index.bzl", "js_library")
+load("@npm//@bazel/typescript:index.bzl", "ts_project")
 
 package(default_visibility = ["//visibility:public"])
 
+ts_project(
+    name = "ui_lib",
+    srcs = ["bundleme.ts"],
+    extends = "//:tsconfig",
+    tsconfig = {
+        # This does not affect the editor (VSCode).
+        # See tsconfig.json in the root of the project
+        "compilerOptions": {
+            "lib": [
+                "ES2021",
+                "dom",
+            ],
+            "types": ["node"],
+            "declaration": True,
+            "sourceMap": True,
+            "composite": True,
+        },
+    },
+    deps = ["@npm//@types/node"],
+)
+
 single_file_bundler(
     name = "ui",
-    data = [],
+    data = [":ui_lib"],
+    entry_point = "bundleme.ts",
 )
 
 js_library(
