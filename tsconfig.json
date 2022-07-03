@@ -1,0 +1,55 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+    },
+    // Targets for Node.js are available here: https://node.green/
+    "target": "ES2019",
+    "module": "commonjs",
+    "jsx": "react",
+    "sourceMap": true,
+    "strict": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "noUncheckedIndexedAccess": true,
+    "preserveConstEnums": true,
+    "allowSyntheticDefaultImports": true,
+    "rootDirs": [
+      ".",
+      "./bazel-out/k8-fastbuild-ST-4a519fd6d3e4/bin",
+
+      "./nodes",
+      "./bazel-out/host/bin/nodes",
+      "./bazel-out/darwin-fastbuild/bin/nodes",
+      "./bazel-out/darwin_arm64-fastbuild/bin/nodes",
+      "./bazel-out/k8-fastbuild/bin/nodes",
+      "./bazel-out/x64_windows-fastbuild/bin/nodes",
+      "./bazel-out/darwin-dbg/bin/nodes",
+      "./bazel-out/k8-dbg/bin/nodes",
+      "./bazel-out/x64_windows-dbg/bin/nodes",
+
+      "./packages",
+      "./bazel-out/host/bin/packages",
+      "./bazel-out/darwin-fastbuild/bin/packages",
+      "./bazel-out/darwin_arm64-fastbuild/bin/packages",
+      "./bazel-out/k8-fastbuild/bin/packages",
+      "./bazel-out/x64_windows-fastbuild/bin/packages",
+      "./bazel-out/darwin-dbg/bin/packages",
+      "./bazel-out/k8-dbg/bin/packages",
+      "./bazel-out/x64_windows-dbg/bin/packages",
+
+      "./types",
+      "./bazel-out/host/bin/types",
+      "./bazel-out/darwin-fastbuild/bin/types",
+      "./bazel-out/darwin_arm64-fastbuild/bin/types",
+      "./bazel-out/k8-fastbuild/bin/types",
+      "./bazel-out/x64_windows-fastbuild/bin/types",
+      "./bazel-out/darwin-dbg/bin/types",
+      "./bazel-out/k8-dbg/bin/types",
+      "./bazel-out/x64_windows-dbg/bin/types"
+    ]
+  },
+  "exclude": ["bazel-*", "node_modules"]
+}

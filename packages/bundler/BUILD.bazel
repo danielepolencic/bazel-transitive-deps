@@ -1,0 +1,25 @@
+load("@npm//@bazel/typescript:index.bzl", "ts_project")
+
+package(default_visibility = ["//visibility:public"])
+
+ts_project(
+    name = "bundle_lib",
+    srcs = glob(["*.ts"]),
+    extends = "//:tsconfig",
+    tsconfig = {
+        "compilerOptions": {
+            "lib": [
+                "ES2021",
+                "dom",
+            ],
+            "types": ["node"],
+            "declaration": True,
+            "sourceMap": True,
+            "composite": True,
+        },
+    },
+    deps = [
+        "@npm//@types/node",
+        "@npm//rollup",
+    ],
+)

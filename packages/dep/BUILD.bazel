@@ -1,0 +1,16 @@
+load("//packages/bundler:index.bzl", "single_file_bundler")
+load("@build_bazel_rules_nodejs//:index.bzl", "js_library")
+
+package(default_visibility = ["//visibility:public"])
+
+single_file_bundler(
+    name = "ui",
+    data = [],
+)
+
+js_library(
+    name = "dep",
+    srcs = [":ui"],
+    deps = [
+    ],
+)
